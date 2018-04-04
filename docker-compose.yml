@@ -1,0 +1,18 @@
+version: '2'
+
+services:
+
+  nuxt:
+    build: .
+    container_name: nuxt
+    environment:
+      - NODE_ENV=productoin
+    ports:
+      - "3000:3000"
+    networks:
+      - db
+    restart: always
+
+networks:
+  db:
+    external: true
